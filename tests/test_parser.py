@@ -13,6 +13,7 @@ from nldate import parse
         ("Dec 1, 2025", date(2025, 12, 1)),
         ("12/01/2025", date(2025, 12, 1)),
         ("Dec. 1, 2025", date(2025, 12, 1)),
+        ("2 years, 3 months before Dec. 1, 2025", date(2023, 9, 1)),
     ],
 )
 def test_absolute_dates(input_string, expected):

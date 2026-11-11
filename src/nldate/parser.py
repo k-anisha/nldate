@@ -213,7 +213,7 @@ def _apply_quantities(
         remaining[start:end] = [" "] * (end - start)
 
     leftovers = "".join(remaining)
-    leftovers = re.sub(r"\band\b", "", leftovers).strip()
+    leftovers = re.sub(r"\band\b|,", "", leftovers).strip()
 
     if leftovers:
         raise ValueError(f"Invalid date quantity: {expression}")
