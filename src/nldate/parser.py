@@ -126,6 +126,9 @@ def _parse_expression(s: str, today: date) -> date:
     if s == "tomorrow":
         return today + timedelta(days=1)
 
+    if s == "the day after tomorrow":
+        return today + timedelta(days=2)
+
     if s == "yesterday":
         return today - timedelta(days=1)
 

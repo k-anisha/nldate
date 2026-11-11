@@ -88,3 +88,10 @@ def test_default_today():
 
     expected = date.today() + timedelta(days=1)
     assert parse("tomorrow") == expected
+
+
+def test_day_after_tomorrow():
+    assert parse(
+        "the day after tomorrow",
+        today=date(2025, 12, 1),
+    ) == date(2025, 12, 3)
