@@ -132,6 +132,9 @@ def _parse_expression(s: str, today: date) -> date:
     if s == "yesterday":
         return today - timedelta(days=1)
 
+    if s == "the day before yesterday":
+        return today - timedelta(days=2)
+
     if s in WEEKDAYS:
         target = WEEKDAYS[s]
         difference = (target - today.weekday()) % 7

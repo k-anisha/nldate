@@ -95,3 +95,10 @@ def test_day_after_tomorrow():
         "the day after tomorrow",
         today=date(2025, 12, 1),
     ) == date(2025, 12, 3)
+
+
+def test_day_before_yesterday():
+    assert parse(
+        "the day before yesterday",
+        today=date(2025, 12, 1),
+    ) == date(2025, 11, 29)
