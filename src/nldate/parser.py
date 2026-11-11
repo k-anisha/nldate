@@ -91,6 +91,7 @@ def _parse_absolute(s: str) -> date:
     """Parse common absolute date formats."""
     formats = [
         "%Y-%m-%d",
+        "%Y/%m/%d",
         "%m/%d/%Y",
         "%m-%d-%Y",
         "%B %d, %Y",
@@ -197,10 +198,7 @@ def _apply_quantities(
     """Apply one or more date quantities to a date."""
     expression = expression.strip().lower()
 
-    pattern = re.compile(
-        r"(\d+|[a-z]+)\s+"
-        r"(days?|weeks?|months?|years?)"
-    )
+    pattern = re.compile(r"(\d+|[a-z]+)\s+" r"(days?|weeks?|months?|years?)")
 
     matches = list(pattern.finditer(expression))
 
