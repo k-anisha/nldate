@@ -89,6 +89,7 @@ def _add_unit(current: date, amount: int, unit: str) -> date:
 
 def _parse_absolute(s: str) -> date:
     """Parse common absolute date formats."""
+    s = s.replace(".", "")
     formats = [
         "%Y-%m-%d",
         "%Y/%m/%d",
